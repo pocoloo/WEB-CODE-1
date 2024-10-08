@@ -1,0 +1,32 @@
+// Function to toggle the visibility of extra content on the About page
+function toggleContent() {
+    const extraContent = document.getElementById("extraContent");
+    if (extraContent.style.display === "none") {
+        extraContent.style.display = "block";
+    } else {
+        extraContent.style.display = "none";
+    }
+}
+
+// Function to validate the form on the Contact page
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    
+    // Basic form validation checks
+    if (!name || !email || !message) {
+        alert("All fields are required.");
+        return false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    // Form is valid, allow submission
+    alert("Form submitted successfully!");
+    return true;
+}
